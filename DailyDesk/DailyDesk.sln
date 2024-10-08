@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyDesk", "DailyDesk\DailyDesk.csproj", "{C5CA256C-3761-4A2F-BAF7-16D96D08675B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyDesk", "DailyDesk\DailyDesk.csproj", "{C5CA256C-3761-4A2F-BAF7-16D96D08675B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logic", "logic\logic.csproj", "{8D99E0F6-13A1-464E-89C9-6C43807BA788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C5CA256C-3761-4A2F-BAF7-16D96D08675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5CA256C-3761-4A2F-BAF7-16D96D08675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5CA256C-3761-4A2F-BAF7-16D96D08675B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
