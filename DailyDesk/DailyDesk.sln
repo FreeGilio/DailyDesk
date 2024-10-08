@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyDesk", "DailyDesk\DailyDesk.csproj", "{C5CA256C-3761-4A2F-BAF7-16D96D08675B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logic", "logic\logic.csproj", "{8D99E0F6-13A1-464E-89C9-6C43807BA788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "logic\Logic.csproj", "{8D99E0F6-13A1-464E-89C9-6C43807BA788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{3ABDA456-1D05-45D3-882D-54300CA08DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D99E0F6-13A1-464E-89C9-6C43807BA788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ABDA456-1D05-45D3-882D-54300CA08DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ABDA456-1D05-45D3-882D-54300CA08DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ABDA456-1D05-45D3-882D-54300CA08DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ABDA456-1D05-45D3-882D-54300CA08DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

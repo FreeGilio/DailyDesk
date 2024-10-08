@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace logic
+namespace DataAccess.Repositories
 {
-    internal class Reservations
+    public class UserRepo
     {
-
     }
 }

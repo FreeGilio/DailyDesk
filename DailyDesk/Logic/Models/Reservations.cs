@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace logic
+namespace Logic.Models
 {
-    internal class Table
+    public class Reservations
     {
 
     }
