@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Interfaces
+namespace Logic.Services
 {
-    public interface ITableRepo
+    public class DeskService
     {
     }
 }

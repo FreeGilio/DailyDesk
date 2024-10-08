@@ -2,7 +2,12 @@
 
 namespace DailyDesk
 {
+ 
     using DataAccess.DB;
+    using DataAccess.Repositories;
+    using Logic.Models;
+    using Logic.Interfaces;
+    using Logic.Services;
 
     public class Program
     {
@@ -13,6 +18,21 @@ namespace DailyDesk
             // Register DatabaseConnection
             builder.Services.AddSingleton<DatabaseConnection>(_ =>
             new DatabaseConnection("Server=mssqlstud.fhict.local;Database=dbi507117_dailydesk;User Id=dbi507117_dailydesk;Password=pl@crC7ai#;"));
+
+            // Register services
+            builder.Services.AddScoped<IReservationRepo, ReservationRepo>();
+            builder.Services.AddScoped<IDeskRepo, DeskRepo>();
+            builder.Services.AddScoped<IUserRepo, UserRepo>();
+
+            // Register services
+            builder.Services.AddScoped<ReservationService>();
+            builder.Services.AddScoped<DeskService>();
+            builder.Services.AddScoped<UserService>();
+
+            // Register models
+            builder.Services.AddScoped<Reservation>();
+            builder.Services.AddScoped<Desk>();
+            builder.Services.AddScoped<User>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

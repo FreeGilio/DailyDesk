@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Services
+namespace Logic.Models
 {
-    public class TableService
+    public class User
     {
+
     }
 }

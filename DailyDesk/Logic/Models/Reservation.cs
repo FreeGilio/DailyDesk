@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.Models
 {
-    public class Reservations
+    public class Reservation
     {
 
     }

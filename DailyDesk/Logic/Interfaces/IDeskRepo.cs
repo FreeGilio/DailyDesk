@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Models
+namespace Logic.Interfaces
 {
-    internal class Users
+    public interface IDeskRepo
     {
-
     }
 }
