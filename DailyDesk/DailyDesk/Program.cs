@@ -17,7 +17,7 @@ namespace DailyDesk
 
             // Register DatabaseConnection
             builder.Services.AddSingleton<DatabaseConnection>(_ =>
-            new DatabaseConnection("Server=mssqlstud.fhict.local;Database=dbi507117_dailydesk;User Id=dbi507117_dailydesk;Password=pl@crC7ai#;"));
+            new DatabaseConnection("Server=mssqlstud.fhict.local;Database=dbi507117_dailydesk;User Id=dbi507117_dailydesk;Password=pl@crC7ai#;TrustServerCertificate=True;"));
 
             // Register Repositories
             builder.Services.AddScoped<IReservationRepo, ReservationRepo>();

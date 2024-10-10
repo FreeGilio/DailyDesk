@@ -9,10 +9,10 @@ namespace Logic.Models
 {
     public class Reservation
     {
-        private int Id { get; set; }
-        public string? Title { get; private set; }
-        public int Capacity { get; private set; }
-        public DateTime StartDate { get; private set; }
-        public DateTime EndDate { get; private set; }
+        public int Id { get;  set; }
+        public string? Title { get; set; }
+        public int Capacity { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }
