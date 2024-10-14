@@ -1,6 +1,7 @@
 ﻿using DataAccess.DB;
 using Logic.Interfaces;
 using Logic.Models;
+using Logic.DTO;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,9 @@ namespace DataAccess.Repositories
             this.databaseConnection = databaseConnection;
         }
 
-        public List<Reservation> GetAllReservations()
+        public List<ReservationDto> GetAllReservations()
         {
-            List<Reservation> reservations = new List<Reservation>();
+            List<ReservationDto> reservations = new List<ReservationDto>();
 
             databaseConnection.StartConnection(connection =>
             {
@@ -39,9 +40,27 @@ namespace DataAccess.Repositories
             return reservations;
         }
 
-        private Reservation MapReservationFromReader(SqlDataReader reader)
+        public void AddReservationDto(ReservationDto reservationToAdd)
         {
-            return new Reservation
+            databaseConnection.StartConnection(connection =>
+            {
+                string insertSql = "INSERT INTO reservation (title, capacity, startDate, endDate) VALUES (@Title, @Capacity, @StartDate, @EndDate);";
+                using (SqlCommand insertCommand = new SqlCommand(insertSql, (SqlConnection)connection))
+                {
+                    insertCommand.Parameters.Add(new SqlParameter("@Title", reservationToAdd.Title));
+                    insertCommand.Parameters.Add(new SqlParameter("@Capacity", reservationToAdd.Capacity));
+                    insertCommand.Parameters.Add(new SqlParameter("@StartDate", reservationToAdd.StartDate));
+                    insertCommand.Parameters.Add(new SqlParameter("@EndDate", reservationToAdd.EndDate));
+
+                    insertCommand.ExecuteNonQuery();
+
+                }
+            });
+        }
+
+        private ReservationDto MapReservationFromReader(SqlDataReader reader)
+        {
+            return new ReservationDto
             {
                 Id = (int)reader["id"],
                 Title = (string)reader["title"],
