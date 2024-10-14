@@ -15,5 +15,9 @@ namespace DailyDesk.Controllers
             var reservations = reservationService.GetAllReservations();
             return View(reservations);
         }
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }
