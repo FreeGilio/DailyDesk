@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Add reservation";
+}
+
+<body>
+    <h1 class="display-4">Add reservation</h1>
+
+    <div>
+        <form method="post" asp-controller="Reservation">
+            <div class="col-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" id="title" name="title" class="form-control"/>
+            </div>
+            <div class="col-3">
+                <label for="desk" class="form-label">Desk:</label>
+                <select class="form-select" aria-label="Default select example" class="form-control">
+                    <option selected>Choose desk</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <label for="startdate" class="form-label">Starting time:</label>
+                <div class="input-group">
+                    <input type="date" id="startdate" name="startdate" class="form-control" />
+                    <input type="time" id="starttime" name="starttime" class="form-control" />
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="enddate" class="form-label">Ending time:</label>
+                <div class="input-group">
+                    <input type="date" id="enddate" name="enddate" class="form-control"/>
+                    <input type="time" id="endtime" name="endtime" class="form-control"/>
+                </div>
+            </div>
+            <br />
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
