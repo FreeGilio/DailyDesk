@@ -57,6 +57,18 @@ namespace DataAccess.Repositories
                 }
             });
         }
+        public void DeleteReservation(int id)
+        {
+            databaseConnection.StartConnection(connection =>
+            {
+                string deleteSql = "DELETE FROM reservation WHERE id = @Id";
+                using (SqlCommand deleteCommand = new SqlCommand(deleteSql, (SqlConnection)connection))
+                {
+                    deleteCommand.Parameters.Add(new SqlParameter("@Id", id));
+                    deleteCommand.ExecuteNonQuery();
+                }
+            });
+        }
 
         private ReservationDto MapReservationFromReader(SqlDataReader reader)
         {
