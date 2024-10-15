@@ -1,0 +1,19 @@
+﻿@model Logic.Models.Reservation;
+
+@{
+    ViewData["Title"] = "Reservation Info";
+}
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2> @Model.Title</h2>
+            <h3>Capacity:</h3>
+            <h4> @Model.Capacity</h4>
+            <h3>Start Date:</h3>
+            <h4>@Model.StartDate</h4>
+            <h3>End Date:</h3>
+            <h4>@Model.EndDate</h4>
+        </div>
+    </div>
+</body>

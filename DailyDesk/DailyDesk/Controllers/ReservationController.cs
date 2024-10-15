@@ -12,6 +12,12 @@ namespace DailyDesk.Controllers
         { 
             this.reservationService = reservationService;
         }
+
+        public ActionResult ReservationInfo(int id)
+        {
+            Reservation reservationModel = reservationService.GetReservationById(id);
+            return View(reservationModel);
+        }
         public IActionResult Index()
         {
             var reservations = reservationService.GetAllReservations();

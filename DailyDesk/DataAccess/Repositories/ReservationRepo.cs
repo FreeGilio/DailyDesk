@@ -19,6 +19,40 @@ namespace DataAccess.Repositories
             this.databaseConnection = databaseConnection;
         }
 
+        public ReservationDto GetReservationDtoById(int reservationId)
+        {
+            ReservationDto result = null;
+
+            databaseConnection.StartConnection(connection =>
+            {
+                string sql = @"
+                SELECT
+                    id,
+                    title,
+                    capacity,
+                    startDate,
+                    endDate              
+                FROM 
+                    reservation                
+                WHERE 
+                    id = @Id";
+                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@Id", reservationId));
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {                         
+                                result = MapReservationFromReader(reader);                          
+                        }
+                    }
+                }
+            });
+
+            return result;
+        }
+
         public List<ReservationDto> GetAllReservations()
         {
             List<ReservationDto> reservations = new List<ReservationDto>();

@@ -10,6 +10,7 @@ namespace Logic.Interfaces
 {
     public interface IReservationRepo
     {
+        ReservationDto GetReservationDtoById(int reservationId);
         List<ReservationDto> GetAllReservations();
 
         void AddReservationDto(ReservationDto reservationToAdd);

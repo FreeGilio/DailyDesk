@@ -19,20 +19,19 @@ namespace Logic.Services
             this._reservationRepo = reservationRepo;
         }
 
+        public Reservation GetReservationById(int? reservationId)
+        {
+
+            ReservationDto reservationDto = _reservationRepo.GetReservationDtoById(reservationId.Value);         
+
+            return new Reservation(reservationDto);
+        }
+
         public List<Reservation> GetAllReservations()
         {
 
             List<ReservationDto> reservations = _reservationRepo.GetAllReservations();
             return Reservation.ConvertToReservations(reservations);
-            //try
-            //{
-               
-            //}
-            //catch (Exception ex)
-            //{
-            //    Logger.LogError("Error getting all reservations", ex);
-            //    throw;
-            //}
         }
 
         public void AddReservation(Reservation reservationToAdd)
