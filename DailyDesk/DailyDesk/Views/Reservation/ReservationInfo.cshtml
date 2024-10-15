@@ -14,6 +14,13 @@
             <h4>@Model.StartDate</h4>
             <h3>End Date:</h3>
             <h4>@Model.EndDate</h4>
+            <h3>Users:</h3>
+            <ul>
+                @foreach (var username in Model.Usernames)
+                {
+                    <li>@username</li>
+                }
+            </ul>
         </div>
     </div>
 </body>

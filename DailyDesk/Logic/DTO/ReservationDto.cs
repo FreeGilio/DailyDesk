@@ -14,16 +14,20 @@ namespace Logic.DTO
         public int Capacity { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public List<string> Usernames { get; set; } = new List<string>(); // List of usernames
 
         public ReservationDto() { }
 
-        public ReservationDto(Reservation reservation)
+        public ReservationDto(Reservation reservation, List<string>? usernames = null)
         {
             Id = reservation.Id;
             Title = reservation.Title;
             Capacity = reservation.Capacity;
             StartDate = reservation.StartDate;
             EndDate = reservation.EndDate;
+
+            // Initialize Usernames either from parameter or as an empty list
+            Usernames = usernames ?? new List<string>();
         }
     }
 }

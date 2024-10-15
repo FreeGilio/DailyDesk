@@ -27,15 +27,18 @@ namespace DataAccess.Repositories
             {
                 string sql = @"
                 SELECT
-                    id,
-                    title,
-                    capacity,
-                    startDate,
-                    endDate              
+                    r.id,
+                    r.title,
+                    r.capacity,
+                    r.startDate,
+                    r.endDate,
+                    u.username
                 FROM 
-                    reservation                
+                    reservation r  
+                LEFT JOIN reservationuser ru ON r.id = ru.reservation_id
+                LEFT JOIN [user] u ON ru.user_id = u.id
                 WHERE 
-                    id = @Id";
+                    r.id = @Id";
                 using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
                 {
                     command.Parameters.Add(new SqlParameter("@Id", reservationId));
@@ -44,7 +47,13 @@ namespace DataAccess.Repositories
                     {
                         if (reader.Read())
                         {                         
-                                result = MapReservationFromReader(reader);                          
+                                result = MapReservationFromReader(reader);
+
+                            // Add each username to the list
+                            if (!(reader["username"] is DBNull))
+                            {
+                                result.Usernames.Add((string)reader["username"]);
+                            }
                         }
                     }
                 }

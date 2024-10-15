@@ -15,6 +15,7 @@ namespace Logic.Models
         public int Capacity { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public List<string> Usernames { get; set; } = new List<string>();
 
         public Reservation() { }
 
@@ -34,6 +35,7 @@ namespace Logic.Models
             Capacity = reservationDto.Capacity;
             StartDate = reservationDto.StartDate;
             EndDate = reservationDto.EndDate;
+            Usernames = reservationDto.Usernames ?? new List<string>();
         }
 
         public static List<Reservation> ConvertToReservations(List<ReservationDto> reservationDtos)
