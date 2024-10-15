@@ -1,4 +1,5 @@
 ﻿using Logic.Models;
+using Logic.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace Logic.Interfaces
 {
     public interface IReservationRepo
     {
+        List<ReservationDto> GetAllReservations();
 
-        List<Reservation> GetAllReservations();
+        void AddReservationDto(ReservationDto reservationToAdd);
     }
 }

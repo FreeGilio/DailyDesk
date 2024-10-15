@@ -1,4 +1,5 @@
 ﻿using Logic.Models;
+using Logic.DTO;
 using Logic.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,8 @@ namespace Logic.Services
         public List<Reservation> GetAllReservations()
         {
 
-            List<Reservation> reservations = _reservationRepo.GetAllReservations();
-            return reservations;
+            List<ReservationDto> reservations = _reservationRepo.GetAllReservations();
+            return Reservation.ConvertToReservations(reservations);
             //try
             //{
                
@@ -32,6 +33,13 @@ namespace Logic.Services
             //    Logger.LogError("Error getting all reservations", ex);
             //    throw;
             //}
+        }
+
+        public void AddReservation(Reservation reservationToAdd)
+        {
+
+            ReservationDto reservationDto = new ReservationDto(reservationToAdd);
+            _reservationRepo.AddReservationDto(reservationDto);
         }
     }
 }
