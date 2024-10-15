@@ -42,7 +42,27 @@ namespace DailyDesk.Controllers
                 
                 //reservationService.AddReservation(reservationToBeAdded);
                 return RedirectToAction("Index", "Reservation");
-          
+
+        }
+
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: PostController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
