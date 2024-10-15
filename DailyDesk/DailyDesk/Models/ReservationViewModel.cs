@@ -1,4 +1,6 @@
-﻿namespace DailyDesk.Models
+﻿using Logic.Models;
+
+namespace DailyDesk.Models
 {
     public class ReservationViewModel
     {
@@ -9,5 +11,12 @@
         public DateOnly EndDate { get; set; }
         public TimeOnly StartTime { get; set; }
         public TimeOnly EndTime { get; set; }
+        public Reservation CreateModel()
+        {
+            DateTime startDate = StartDate.ToDateTime(StartTime);
+            DateTime endDate = EndDate.ToDateTime(EndTime);
+            Reservation reservation = new Reservation(Id, Title, Capacity, startDate, endDate);
+            return reservation;
+        }
     }
 }

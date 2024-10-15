@@ -39,9 +39,9 @@ namespace DailyDesk.Controllers
         [HttpPost]
         public IActionResult AddReservation(ReservationViewModel newReservation)
         {
-                
-                //reservationService.AddReservation(reservationToBeAdded);
-                return RedirectToAction("Index", "Reservation");
+            Reservation reservationModel = newReservation.CreateModel();
+            reservationService.AddReservation(reservationModel);
+            return RedirectToAction("Index", "Reservation");
 
         }
 
