@@ -2,6 +2,7 @@
 using Logic.Services;
 using Logic.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using DailyDesk.Models;
 
 namespace DailyDesk.Controllers
 {
@@ -23,16 +24,17 @@ namespace DailyDesk.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddReservation()
+        public IActionResult GetReservations()
         {
             var reservations = reservationService.GetAllReservations();
             return View(new Reservation());
         }
 
         [HttpPost]
-        public IActionResult AddChar(Reservation reservationToBeAdded)
-        {         
-                reservationService.AddReservation(reservationToBeAdded);
+        public IActionResult AddReservation(ReservationViewModel newReservation)
+        {
+                
+                //reservationService.AddReservation(reservationToBeAdded);
                 return RedirectToAction("Index", "Reservation");
           
         }
